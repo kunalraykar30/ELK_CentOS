@@ -4,3 +4,4 @@
 - import_tasks: system_prep.yaml
 - import_tasks: install_elasticseach.yaml
 - import_tasks: install_kibana.yaml
+- import_tasks: install_nginx.yaml
