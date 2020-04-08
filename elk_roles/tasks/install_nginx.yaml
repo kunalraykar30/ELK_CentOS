@@ -10,6 +10,15 @@
 
 # Make necessary settings to nginx so kibana can talk on port 80 of server
 
+- name: Delete the server block in /etc/nginx/nginx.conf
+  copy: 
+    src: files/nginx.conf
+    dest: /etc/nginx/nginx.conf
+
+- name: Copy kibana.conf from files to /etc/nginx/conf.d/kibana.conf
+  copy:
+    src: files/kibana.conf
+    dest: /etc/nginx/conf.d/kibana.conf
 
 # Start Nginx Service 
 
