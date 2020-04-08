@@ -1,0 +1,5 @@
+---
+
+ - hosts: localhost
+   roles:
+   - elk_roles
