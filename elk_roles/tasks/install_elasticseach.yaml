@@ -1,0 +1,31 @@
+---
+# Install elasticsearch 
+
+- name: Add Elasticsearch GPG key.
+  rpm_key:
+    key: https://artifacts.elastic.co/GPG-KEY-elasticsearch
+    state: present
+
+- name: Copy elk.repo from files to /etc/yum.repos.d/
+  copy:
+    src: files/elk.repo
+    dest: /etc/yum.repos.d/
+
+- name: Install Elasticsearch.
+  yum: 
+    name: elasticsearch
+    state: installed
+
+- name: Start Elasticsearch.
+  service: 
+    name: elasticsearch 
+    state: restarted
+    enabled: yes
+  ignore_errors: true
+
+- name: Make sure Elasticsearch is running before proceeding.
+  wait_for: 
+    host: "{{ elasticsearch_network_host }}" 
+    port: "{{ elasticsearch_http_port }}"
+    delay: 3
+    timeout: 200
