@@ -1,0 +1,21 @@
+---
+# Install Nginx
+
+- name: Install nginx
+  yum:
+    name:
+      - epel-release
+      - nginx
+    state: present
+
+# Make necessary settings to nginx so kibana can talk on port 80 of server
+
+
+# Start Nginx Service 
+
+- name: Start Nginx Service
+  service: 
+    name: nginx
+    state: started
+    enabled: yes
+  ignore_errors: true
