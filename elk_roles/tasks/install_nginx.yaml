@@ -10,6 +10,7 @@
 
 # Make necessary settings to nginx so kibana can talk on port 80 of server
 
+# Please note instead of deleting the block I have replaced the file from files dir :P
 - name: Delete the server block in /etc/nginx/nginx.conf
   copy: 
     src: files/nginx.conf
