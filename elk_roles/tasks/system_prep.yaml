@@ -1,0 +1,14 @@
+---
+# Make system ready before installation of the ELK stack
+
+- name: Install Java
+  yum: name=java state=latest
+
+- name: Disable selinux 
+  selinux:
+    state: disabled   
+
+- name: Disable firewalld 
+  systemd:
+    name: firewalld
+    state: stopped
