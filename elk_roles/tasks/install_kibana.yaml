@@ -1,0 +1,11 @@
+---
+
+- name: Install Kibana
+  yum: name=kibana state=latest
+
+- name: Start Kibana
+  service: 
+    name: kibana 
+    state: restarted
+    enabled: yes
+  ignore_errors: true       
