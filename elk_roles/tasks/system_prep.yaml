@@ -1,8 +1,12 @@
 ---
 # Make system ready before installation of the ELK stack
 
-- name: Install Java
-  yum: name=java state=latest
+- name: Install Java and wget
+  yum:
+    name:
+      - java
+      - wget
+    state: present
 
 - name: Disable selinux 
   selinux:
