@@ -6,7 +6,7 @@
     key: https://artifacts.elastic.co/GPG-KEY-elasticsearch
     state: present
 
-- name: Copy elk.repo from files to /etc/yum.repos.d/
+- name: Copy elk.repo from elk.repo.j2
   copy:
     src: templates/elk.repo.j2
     dest: /etc/yum.repos.d/elk.repo
