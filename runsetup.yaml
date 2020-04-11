@@ -2,4 +2,4 @@
 
  - hosts: localhost
    roles:
-   - elk_roles
+   - elk_role
