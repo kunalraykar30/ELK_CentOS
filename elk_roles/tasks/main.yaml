@@ -5,3 +5,4 @@
 - import_tasks: install_elasticsearch.yaml
 - import_tasks: install_kibana.yaml
 - import_tasks: install_nginx.yaml
+- import_tasks: install_logstash.yaml
