@@ -1,0 +1,11 @@
+---
+
+- name: Create elk.repo from elk.repo.j2
+  template:
+    src: templates/elk.repo.j2
+    dest: /etc/yum.repos.d/elk.repo
+
+- name: Install Filebeat
+  yum: 
+    name: filebeat
+    state: installed
