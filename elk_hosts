@@ -1,0 +1,5 @@
+# Inventory file
+# I have created user kunal on my client machine. 
+
+[elk_clients]
+instance-2 ansible_connection=ssh ansible_ssh_user=kunal ansible_ssh_pass=root123
