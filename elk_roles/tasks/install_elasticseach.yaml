@@ -8,8 +8,8 @@
 
 - name: Copy elk.repo from files to /etc/yum.repos.d/
   copy:
-    src: files/elk.repo
-    dest: /etc/yum.repos.d/
+    src: elk.repo.j2
+    dest: /etc/yum.repos.d/elk.repo
 
 - name: Install Elasticsearch.
   yum: 
