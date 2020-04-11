@@ -2,6 +2,6 @@
 # Main Tasks file for elk
 
 - import_tasks: system_prep.yaml
-- import_tasks: install_elasticseach.yaml
+- import_tasks: install_elasticsearch.yaml
 - import_tasks: install_kibana.yaml
 - import_tasks: install_nginx.yaml
