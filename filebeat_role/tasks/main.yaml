@@ -1,4 +1,5 @@
 ---
 # Main Tasks file for filebeat
 
+- set_fact: ELK_version=6.x
 - import_tasks: install_filebeat.yaml
