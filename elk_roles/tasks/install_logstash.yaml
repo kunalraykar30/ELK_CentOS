@@ -1,0 +1,19 @@
+- name: Install Logstash
+  yum:
+    name:
+      - logstash
+    state: present
+	
+# Create the certificate using openssl command 
+	
+- name: Initialize /etc/logstash/conf.d/01-logstash-simple.conf from J2 template 
+  copy:
+    src: templates/01-logstash-simple.conf.j2
+    dest: /etc/logstash/conf.d/01-logstash-simple.conf
+
+- name: Start Logstash.
+  service: 
+    name: logstash 
+    state: restarted
+    enabled: yes
+  ignore_errors: true
