@@ -8,5 +8,10 @@
    vars:
      elk_host: instance-1
    become: true
+   tasks:
+     - name: Copy certs of logstash to the client machine
+       copy: 
+         src: /etc/pki/tls/certs/logstash.crt 
+         dest: /var/tmp/ 
    roles:
    - filebeat_role
