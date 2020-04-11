@@ -3,3 +3,10 @@
  - hosts: localhost
    roles:
    - elk_role
+
+ - hosts: elk_clients
+   vars:
+     elk_host: instance-1
+   become: true
+   roles:
+   - filebeat_role
