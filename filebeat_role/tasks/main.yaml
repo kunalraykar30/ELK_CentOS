@@ -1,0 +1,4 @@
+---
+# Main Tasks file for filebeat
+
+- import_tasks: install_filebeat.yaml
