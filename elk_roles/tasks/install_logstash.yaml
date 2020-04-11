@@ -1,3 +1,4 @@
+---
 - name: Install Logstash
   yum:
     name:
@@ -6,7 +7,7 @@
 
 # Create the certificate using openssl command 
 
-- name: Using curl to connect to a host via SOCKS proxy (unsupported in uri). Ordinarily this would throw a warning.
+- name: Generate SSL Certificates.
   shell: openssl req -subj '/CN=instance-1/' -x509 -days 3650 -nodes -batch -newkey rsa:2048 -keyout /etc/pki/tls/private/logstash.key -out /etc/pki/tls/certs/logstash.crt
     
 - name: Initialize /etc/logstash/conf.d/01-logstash-simple.conf from J2 template 
