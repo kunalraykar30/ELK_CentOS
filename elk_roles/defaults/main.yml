@@ -3,5 +3,12 @@
 
 ELK_version: 6.x
 
+# Elasticsearch vars
+
 elasticsearch_network_host: localhost
 elasticsearch_http_port: 9200
+
+# Logstash vars
+
+logstash_cert: /etc/pki/tls/certs/logstash.crt
+logstash_key: /etc/pki/tls/private/logstash.key
