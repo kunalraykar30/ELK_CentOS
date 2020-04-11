@@ -3,9 +3,9 @@
     name:
       - logstash
     state: present
-	
+
 # Create the certificate using openssl command 
-	
+
 - name: Initialize /etc/logstash/conf.d/01-logstash-simple.conf from J2 template 
   copy:
     src: templates/01-logstash-simple.conf.j2
