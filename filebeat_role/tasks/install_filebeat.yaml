@@ -10,11 +10,21 @@
     name: filebeat
     state: installed
 
-#Copy the cert logstash certificate to the client server
+#Copy the cert logstash certificate to the client server. My ELK server is the ansible controller, so certs are lying on this server.
 
+- name: Create elk.repo from elk.repo.j2
+  copy:
+    src: etc/pki/tls/certs/logstash.crt 
+    dest: /tmp/
 
 - name: Create filebeat.yml from filebeat.yml.j2
   template:
     src: templates/filebeat.yml.j2
     dest: /etc/filebeat/filebeat.yml
 
+- name: Start filebeat.
+  service: 
+    name: filebeat 
+    state: started
+    enabled: yes
+  ignore_errors: true
