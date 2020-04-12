@@ -3,3 +3,6 @@
 
 [elk_clients]
 instance-2 ansible_connection=ssh ansible_ssh_user=kunal ansible_ssh_pass=root123
+
+[all:vars]
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
