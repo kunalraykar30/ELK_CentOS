@@ -12,6 +12,6 @@
      - name: Copy certs of logstash to the client machine
        copy: 
          src: /etc/pki/tls/certs/logstash.crt 
-         dest: /var/tmp/ 
+         dest: /etc/pki/tls/certs/ 
    roles:
    - filebeat_role
