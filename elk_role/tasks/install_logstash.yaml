@@ -13,7 +13,7 @@
   shell: openssl req -subj '/CN=instance-1/' -x509 -days 3650 -nodes -batch -newkey rsa:2048 -keyout {{ logstash_key }} -out {{ logstash_cert }}
     
 - name: Initialize /etc/logstash/conf.d/01-logstash-simple.conf from J2 template 
-  copy:
+  template:
     src: templates/01-logstash-simple.conf.j2
     dest: /etc/logstash/conf.d/01-logstash-simple.conf
 
